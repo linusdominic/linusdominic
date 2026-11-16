@@ -1,7 +1,25 @@
-- 👋 Hi, I’m @linusdominic
-- 👀 I’m interested in Machine Learning, MLOps, Data Science, Web & Mobile Development, and Reading Thriller Novels + Watching Thriller/Mystery Movies
-- 🌱 I’m currently learning Data Engineering, Containerization using Docker 
-- 💞️ I’m looking to collaborate on Data Science/MLOps related projects
-- 📫 How to reach me: You can write to me on my email, linusnathaniel@gmail.com. 
+# Linus Dominic Nathaniel
 
+Lead data engineer. I build data platforms on AWS and Databricks, mostly for lending,
+and most of my work comes down to reconciliation: getting several systems that each
+think they own the customer to agree on one version.
 
+Portfolio: [linusdominic.github.io](https://linusdominic.github.io) ·
+LinkedIn: [linus-dominic](https://www.linkedin.com/in/linus-dominic)
+
+## Projects
+
+Three repositories, one domain (lending), each runnable from a clone. Every number in
+their READMEs comes from a run on my own machine, and each README lists what was not
+verified.
+
+| Repository | What it is | Stack |
+| --- | --- | --- |
+| [lakehouse-cdc-streaming](https://github.com/linusdominic/lakehouse-cdc-streaming) | Change data capture from a loan-servicing Postgres into Iceberg, with a harness that proves the lakehouse still matches the source after duplicates, replays, a schema change and a job killed mid-batch | Debezium, Kafka API (Redpanda), Spark Structured Streaming, Iceberg, Trino, dbt, Terraform |
+| [reconkit](https://github.com/linusdominic/reconkit) | A Python tool that diffs tables across databases by checksum bisection, so only disagreeing key ranges are downloaded, and checks tables against data contracts in CI | Python, PostgreSQL, DuckDB, warehouse SQL dialects, Airflow and Dagster hooks |
+| [mortgage-metrics-platform](https://github.com/linusdominic/mortgage-metrics-platform) | Batch platform on public HMDA mortgage data: idempotent backfills, a Kimball star with enforced contracts, metrics defined once in a semantic layer, and an MCP server that lets AI agents query those metrics and nothing else | Airflow 3, dbt, MetricFlow, DuckDB, MCP |
+
+## What I work with
+
+Python, SQL · Redshift, Databricks (Delta Lake, Unity Catalog), Snowflake, BigQuery,
+PostgreSQL · Airflow, dbt, Spark, Kafka, AWS Glue · Terraform, Docker, GitHub Actions
