@@ -1,0 +1,11 @@
+{
+  "agentic-docs-assistant": "success",
+  "ask-the-warehouse": "success",
+  "lakehouse-cdc-streaming": "success",
+  "mortgage-metrics-platform": "success",
+  "outbound-call-agent": "success",
+  "reconkit": "success",
+  "sales-call-qa": "success",
+  "serverless-webhook-ingestion": "success",
+  "vectorless-rag-benchmark": "success"
+}

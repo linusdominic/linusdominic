@@ -1,0 +1,139 @@
+# Everything on the profile page comes from this file. Edit it, run `python build.py`,
+# and the SVGs and README.md are rebuilt. A GitHub Action does the same every day so the
+# CI lights stay current.
+
+owner = "linusdominic"
+name = "Linus Dominic Nathaniel"
+wordmark = ["linus", "dominic", "nathaniel"]  # drawn as linus.dominic/nathaniel
+tagline = [
+    "Lead data engineer in lending. I build data platforms and LLM agents,",
+    "and I publish how each one was measured.",
+]
+rule = "Every number comes from a run. What was not verified is listed."
+
+[[links]]
+label = "Portfolio"
+url = "https://linusdominic.github.io"
+
+[[links]]
+label = "LinkedIn"
+url = "https://www.linkedin.com/in/linus-dominic"
+
+# How I work: three short statements.
+[[principles]]
+title = "Run it"
+text = ["Each project runs from a clone.", "Every number in a README", "came from a run on my machine."]
+
+[[principles]]
+title = "Measure it"
+text = ["Baselines that could win,", "held-out sets, and tests that", "prove the claim, not the demo."]
+
+[[principles]]
+title = "Say what was not verified"
+text = ["Simulated data, emulators,", "services I had no account for:", "each README lists them."]
+
+# What I work with.
+[[stack]]
+group = "Languages"
+items = ["Python", "SQL"]
+
+[[stack]]
+group = "Warehouses"
+items = ["Redshift", "Databricks", "Snowflake", "BigQuery", "PostgreSQL"]
+
+[[stack]]
+group = "Pipelines"
+items = ["Airflow", "dbt", "Spark", "Kafka", "AWS Glue"]
+
+[[stack]]
+group = "Infrastructure"
+items = ["Terraform", "Docker", "GitHub Actions"]
+
+[[stack]]
+group = "AI"
+items = ["Claude API", "LangGraph", "FastAPI", "pgvector", "LLM evaluation"]
+
+# --- AI engineering -------------------------------------------------------------------
+
+[[projects]]
+section = "AI engineering"
+repo = "outbound-call-agent"
+what = ["An AI agent that makes follow-up calls for a lender,", "with consent and do-not-call rules enforced in code."]
+metric = "199 / 200"
+label = "simulated calls passed every check"
+caveat = "Simulated contacts. No real calls are placed."
+stack = ["Claude API", "FastAPI", "SQLite", "whisper.cpp"]
+
+[[projects]]
+section = "AI engineering"
+repo = "sales-call-qa"
+what = ["Grades recorded sales calls against a script, with a", "quote and a timestamp behind every verdict."]
+metric = "160 / 160"
+label = "held-out call outcomes graded correctly"
+caveat = "Synthetic calls and text-to-speech voices."
+stack = ["Claude API", "whisper.cpp", "FastAPI"]
+
+[[projects]]
+section = "AI engineering"
+repo = "ask-the-warehouse"
+what = ["Answers sales and production questions from governed", "metric definitions, in place of dashboards."]
+metric = "46 / 46"
+label = "questions right; schema-only text-to-SQL got 40"
+caveat = "Simulated data on PostgreSQL. Not deployed."
+stack = ["Claude API", "FastAPI", "PostgreSQL", "sqlglot"]
+
+[[projects]]
+section = "AI engineering"
+repo = "vectorless-rag-benchmark"
+what = ["RAG where a model navigates a document's outline", "instead of searching a vector index, measured."]
+metric = "95% vs 75%"
+label = "right paragraph ranked first, against hybrid search"
+caveat = "60 model-written questions, ten checked by hand."
+stack = ["Claude API", "BM25", "fastembed", "eCFR"]
+
+[[projects]]
+section = "AI engineering"
+repo = "agentic-docs-assistant"
+what = ["A support agent that answers from documentation and", "files a ticket only after a person approves it."]
+metric = "Human in the loop"
+label = "the agent pauses, a person approves, it resumes"
+caveat = "The Cloud Run deployment is a reference, not run."
+stack = ["LangGraph", "FastAPI", "pgvector", "Docker"]
+
+# --- Data platforms -------------------------------------------------------------------
+
+[[projects]]
+section = "Data platforms"
+repo = "lakehouse-cdc-streaming"
+what = ["Change data capture from Postgres into Iceberg, with a", "harness that proves the lake still matches the source."]
+metric = "5 failure modes"
+label = "duplicates, reordering, schema change, deletes, crashes"
+caveat = "Runs locally with docker compose. Not deployed."
+stack = ["Debezium", "Spark", "Iceberg", "dbt"]
+
+[[projects]]
+section = "Data platforms"
+repo = "reconkit"
+what = ["Diffs tables across databases by checksum bisection,", "so only the disagreeing key ranges are downloaded."]
+metric = "2,880 of 50,000"
+label = "rows downloaded to find every difference"
+caveat = "Postgres and DuckDB tested. Cloud warehouses not run live."
+stack = ["Python", "PostgreSQL", "DuckDB"]
+
+[[projects]]
+section = "Data platforms"
+repo = "mortgage-metrics-platform"
+what = ["Batch platform on public mortgage data, with metrics", "defined once for both people and AI agents."]
+metric = "One definition"
+label = "per metric, for people and for AI agents over MCP"
+caveat = "Runs on a laptop against DuckDB. Not deployed."
+stack = ["Airflow 3", "dbt", "MetricFlow", "MCP"]
+
+[[projects]]
+section = "Data platforms"
+repo = "serverless-webhook-ingestion"
+what = ["Serverless ingestion of vendor webhooks on AWS that", "does not lose, duplicate or reorder anything."]
+metric = "18 / 18"
+label = "invariants hold after a seeded load test"
+caveat = "Verified on an AWS emulator. Never deployed to real AWS."
+stack = ["Lambda", "SQS", "DynamoDB", "Terraform"]
