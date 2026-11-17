@@ -22,13 +22,14 @@ verified.
 
 ### AI engineering
 
-Two repositories on LLM systems, held to the same rule: what the README claims was run,
+Three repositories on LLM systems, held to the same rule: what the README claims was run,
 and what was not run is listed.
 
 | Repository | What it is | Stack |
 | --- | --- | --- |
 | [agentic-docs-assistant](https://github.com/linusdominic/agentic-docs-assistant) | A support agent that answers questions from a documentation set and files a ticket only after a human approves it. Retrieval runs on pgvector, the agent's state is checkpointed to Postgres so a paused run can resume, and replies stream over HTTP. Run locally against a live model and in CI with a scripted one; the Cloud Run deployment is a reference and was not run | LangGraph, FastAPI, PostgreSQL + pgvector, Docker, Cloud Run |
 | [vectorless-rag-benchmark](https://github.com/linusdominic/vectorless-rag-benchmark) | "Vectorless" RAG, where a model navigates a document's outline instead of searching a vector index, built and measured against BM25, dense and hybrid retrieval on Regulation Z (Truth in Lending). With index summaries it ranked the right paragraph first on 95% of 60 questions against 75% for hybrid search, at about three seconds a query; the answer-accuracy gap was not statistically significant. The questions are model-written and only ten were checked by hand | Python, Claude API, BM25, fastembed, eCFR, GitHub Actions |
+| [ask-the-warehouse](https://github.com/linusdominic/ask-the-warehouse) | A chat assistant that answers sales and production questions from governed metric definitions over near-real-time data, in place of dashboards, with scheduled digests and threshold alerts that a person approves. Evaluated on 46 hand-written questions against two text-to-SQL baselines: it scored 46, text-to-SQL given the same definitions also scored 46, and text-to-SQL given only the schema scored 40. Simulated data on PostgreSQL; not deployed | Python, Claude API, FastAPI, PostgreSQL, sqlglot, Docker, GitHub Actions |
 
 ## What I work with
 
