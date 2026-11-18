@@ -107,8 +107,11 @@ def hero(profile: dict, c: dict) -> str:
     width, pad = 840, 40
     first, second, third = profile["wordmark"]
     repos = [project["repo"] for project in profile["projects"]]
+    columns = 3
+    rows = -(-len(repos) // columns)
+    height = 337 + rows * 21  # the listing grows a line for every three projects
     out = [
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="399" rx="14" fill="{c["card"]}" stroke="{c["border"]}"/>',
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="14" fill="{c["card"]}" stroke="{c["border"]}"/>',
         f'<path d="M0.5 44.5h{width - 1}" stroke="{c["border"]}"/>',
         '<circle cx="24" cy="22" r="6" fill="#ff5f57"/><circle cx="44" cy="22" r="6" fill="#febc2e"/>'
         '<circle cx="64" cy="22" r="6" fill="#28c840"/>',
@@ -141,14 +144,12 @@ def hero(profile: dict, c: dict) -> str:
     y += 58
     line, done = typed("ls projects/", pad, y, done + 1.0, c)
     out.append(line)
-    columns = 3
     for index, repo in enumerate(repos):
         row, column = divmod(index, columns)
         out.append(
             text(pad + column * 256, y + 24 + row * 21, f"{escape(repo)}/", size=13.5, fill=c["accent"],
                  font=MONO, class_="o", style=f"animation-delay:{done + 0.25 + row * 0.12:.2f}s")
         )  # fmt: skip
-    rows = -(-len(repos) // columns)
     y += 24 + rows * 21 + 12
     end = done + 0.25 + rows * 0.12 + 0.5
     out.append(
@@ -157,7 +158,7 @@ def hero(profile: dict, c: dict) -> str:
         + f'<rect class="cur" x="{pad + 17}" y="{y - 12}" width="9" height="16" fill="{c["text"]}"/></g>'
     )
     label = f"{profile['name']}. {' '.join(profile['tagline'])} {profile['rule']}"
-    return svg(width, 400, label, "".join(out), ANIMATION)
+    return svg(width, height, label, "".join(out), ANIMATION)
 
 
 def card(project: dict, ci: str | None, c: dict) -> str:

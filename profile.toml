@@ -104,6 +104,15 @@ stack = ["LangGraph", "FastAPI", "pgvector", "Docker"]
 
 [[projects]]
 section = "Data platforms"
+repo = "airflow-migration-template"
+what = ["A platform template for moving legacy ETL jobs to", "Airflow: one pipeline runs on DuckDB or Postgres."]
+metric = "8 / 8"
+label = "self-test checks pass on DuckDB and on PostgreSQL"
+caveat = "Redshift and cloud storage adapters were not run live."
+stack = ["Airflow 3", "DuckDB", "PostgreSQL", "Redshift"]
+
+[[projects]]
+section = "Data platforms"
 repo = "lakehouse-cdc-streaming"
 what = ["Change data capture from Postgres into Iceberg, with a", "harness that proves the lake still matches the source."]
 metric = "5 failure modes"
