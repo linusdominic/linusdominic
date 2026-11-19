@@ -162,5 +162,5 @@ repo = "open-lending-data"
 what = ["US mortgage public data harmonised: HMDA 2007-2025", "on one schema, joined to banks and complaints."]
 metric = "325,140,977"
 label = "HMDA records, 19 years, row counts equal the raw files"
-caveat = "Release files built locally; not yet uploaded."
+caveat = "Full build run on one Mac; 13 GB of Parquet released."
 stack = ["Python", "DuckDB", "Parquet", "reconkit"]
