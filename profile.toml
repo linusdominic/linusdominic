@@ -123,11 +123,11 @@ stack = ["Debezium", "Spark", "Iceberg", "dbt"]
 [[projects]]
 section = "Data platforms"
 repo = "reconkit"
-what = ["Diffs tables across databases by checksum bisection,", "so only the disagreeing key ranges are downloaded."]
-metric = "2,880 of 50,000"
-label = "rows downloaded to find every difference"
-caveat = "Postgres and DuckDB tested. Cloud warehouses not run live."
-stack = ["Python", "PostgreSQL", "DuckDB"]
+what = ["Diffs tables across databases by checksum bisection;", "a drop-in for the archived data-diff, dbt mode included."]
+metric = "1,151 of 1,000,000"
+label = "rows downloaded to find all 11 planted differences"
+caveat = "Snowflake, BigQuery, Redshift tested on emulators, not live."
+stack = ["Python", "PostgreSQL", "DuckDB", "dbt"]
 
 [[projects]]
 section = "Data platforms"
