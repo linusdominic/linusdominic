@@ -100,6 +100,15 @@ label = "the agent pauses, a person approves, it resumes"
 caveat = "The Cloud Run deployment is a reference, not run."
 stack = ["LangGraph", "FastAPI", "pgvector", "Docker"]
 
+[[projects]]
+section = "AI engineering"
+repo = "pipeline-triage-bench"
+what = ["A benchmark for agents answering data-pipeline alerts:", "rerun, backfill, fix, escalate, or leave it alone."]
+metric = "33 / 33"
+label = "incidents solved by the reference agent; best naive one: 9"
+caveat = "Simulated lender. No language model has been run on it yet."
+stack = ["Python", "dbt", "DuckDB", "MCP"]
+
 # --- Data platforms -------------------------------------------------------------------
 
 [[projects]]
