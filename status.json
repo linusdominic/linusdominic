@@ -5,6 +5,7 @@
   "lakehouse-cdc-streaming": "success",
   "mortgage-metrics-platform": "success",
   "outbound-call-agent": "success",
+  "pipeline-triage-bench": "success",
   "reconkit": "success",
   "sales-call-qa": "success",
   "serverless-webhook-ingestion": "success",
