@@ -155,3 +155,12 @@ metric = "18 / 18"
 label = "invariants hold after a seeded load test"
 caveat = "Verified on an AWS emulator. Never deployed to real AWS."
 stack = ["Lambda", "SQS", "DynamoDB", "Terraform"]
+
+[[projects]]
+section = "Data platforms"
+repo = "open-lending-data"
+what = ["US mortgage public data harmonised: HMDA 2007-2025", "on one schema, joined to banks and complaints."]
+metric = "325,140,977"
+label = "HMDA records, 19 years, row counts equal the raw files"
+caveat = "Release files built locally; not yet uploaded."
+stack = ["Python", "DuckDB", "Parquet", "reconkit"]
