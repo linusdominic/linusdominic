@@ -168,8 +168,8 @@ stack = ["Python", "DuckDB", "Parquet", "reconkit"]
 [[projects]]
 section = "Data platforms"
 repo = "nosql-for-data-engineers"
-what = ["A hands-on NoSQL guide for data engineers who know", "SQL: five databases in Docker, with checked exercises."]
-metric = "6 / 6"
-label = "source-to-lake reconciliations pass in the capstone"
-caveat = "Single-node databases on one Mac. No cloud services."
-stack = ["MongoDB", "Redis", "Cassandra", "DynamoDB"]
+what = ["A NoSQL course for data engineers, with a local lesson", "studio wired to five real databases. Demo video inside."]
+metric = "48 exercises"
+label = "checked live against five real NoSQL databases"
+caveat = "Runs locally in Docker. Single-node, no cloud services."
+stack = ["MongoDB", "Redis", "Cassandra", "Neo4j"]
