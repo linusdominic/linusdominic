@@ -164,3 +164,12 @@ metric = "325,140,977"
 label = "HMDA records, 19 years, row counts equal the raw files"
 caveat = "Full build run on one Mac; 13 GB of Parquet released."
 stack = ["Python", "DuckDB", "Parquet", "reconkit"]
+
+[[projects]]
+section = "Data platforms"
+repo = "nosql-for-data-engineers"
+what = ["A hands-on NoSQL guide for data engineers who know", "SQL: five databases in Docker, with checked exercises."]
+metric = "6 / 6"
+label = "source-to-lake reconciliations pass in the capstone"
+caveat = "Single-node databases on one Mac. No cloud services."
+stack = ["MongoDB", "Redis", "Cassandra", "DynamoDB"]
