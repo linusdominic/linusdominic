@@ -177,8 +177,8 @@ stack = ["MongoDB", "Redis", "Cassandra", "Neo4j"]
 [[projects]]
 section = "Data platforms"
 repo = "de-trap-drills"
-what = ["SQL and Python drills where the obvious answer fails.", "They run in the browser or on the command line."]
-metric = "26 drills"
-label = "the obvious answer fails in each one, and tests prove it"
-caveat = "Checked in Chrome only. Timings from one machine."
-stack = ["SQL", "Python", "DuckDB-Wasm", "Pyodide"]
+what = ["Interview prep for data engineers: paths, concepts and", "drills in SQL, Python, Spark and Airflow."]
+metric = "40 drills"
+label = "the obvious answer fails in each one; 9 learning paths"
+caveat = "Chrome only. Spark and Airflow run on one version each."
+stack = ["SQL", "Python", "Spark", "Airflow"]
