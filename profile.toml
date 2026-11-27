@@ -30,7 +30,7 @@ text = ["Baselines that could win,", "held-out sets, and tests that", "prove the
 
 [[principles]]
 title = "Say what was not verified"
-text = ["Simulated data, emulators,", "services I had no account for:", "each README lists them."]
+text = ["Simulated data, emulators,", "services I had no account for:", "each card below names them."]
 
 # What I work with.
 [[stack]]

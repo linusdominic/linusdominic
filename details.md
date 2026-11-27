@@ -1,8 +1,7 @@
 ### Data platforms
 
 Eight repositories, most of them in one domain (lending), each runnable from a clone. Every number in
-their READMEs comes from a run on my own machine, and each README lists what was not
-verified.
+their READMEs comes from a run on my own machine.
 
 | Repository | What it is | Stack |
 | --- | --- | --- |
