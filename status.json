@@ -1,7 +1,10 @@
 {
+  "agentcore-loan-servicing-agent": "success",
   "agentic-docs-assistant": "success",
   "airflow-migration-template": "success",
+  "ask-the-lake": "success",
   "ask-the-warehouse": "success",
+  "connect-self-service-agent": "success",
   "de-trap-drills": "success",
   "lakehouse-cdc-streaming": "success",
   "mortgage-metrics-platform": "success",

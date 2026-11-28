@@ -144,10 +144,12 @@ def hero(profile: dict, c: dict) -> str:
     y += 58
     line, done = typed("ls projects/", pad, y, done + 1.0, c)
     out.append(line)
+    # Sized so the longest name leaves a gap before the next column.
+    listing = round(min(13.5, (256 - 14) / ((max(map(len, repos)) + 1) * MONO_ADVANCE)), 1)
     for index, repo in enumerate(repos):
         row, column = divmod(index, columns)
         out.append(
-            text(pad + column * 256, y + 24 + row * 21, f"{escape(repo)}/", size=13.5, fill=c["accent"],
+            text(pad + column * 256, y + 24 + row * 21, f"{escape(repo)}/", size=listing, fill=c["accent"],
                  font=MONO, class_="o", style=f"animation-delay:{done + 0.25 + row * 0.12:.2f}s")
         )  # fmt: skip
     y += 24 + rows * 21 + 12
@@ -163,10 +165,13 @@ def hero(profile: dict, c: dict) -> str:
 
 def card(project: dict, ci: str | None, c: dict) -> str:
     width, height, pad = 410, 208, 20
+    # A long repository name is set slightly smaller so it stops short of the CI light.
+    room = width - pad - len("CI passing") * 11 * MONO_ADVANCE - 26 - (pad + 24)
+    name_size = round(min(15.0, room / (len(project["repo"]) * MONO_ADVANCE)), 1)
     out = [
         f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="12" fill="{c["card"]}" stroke="{c["border"]}"/>',
         f'<path transform="translate({pad} 20)" d="{REPO_ICON}" fill="{c["muted"]}"/>',
-        text(pad + 24, 33, escape(project["repo"]), size=15, fill=c["accent"], font=MONO, font_weight=700),
+        text(pad + 24, 33, escape(project["repo"]), size=name_size, fill=c["accent"], font=MONO, font_weight=700),
     ]
     if ci in ("success", "failure"):
         colour, word = (c["good"], "CI passing") if ci == "success" else (c["bad"], "CI failing")

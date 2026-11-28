@@ -57,6 +57,33 @@ items = ["Claude API", "LangGraph", "FastAPI", "pgvector", "LLM evaluation"]
 
 [[projects]]
 section = "AI engineering"
+repo = "agentcore-loan-servicing-agent"
+what = ["A loan-servicing agent built for Bedrock AgentCore,", "with tool access decided by Cedar policy, not prompts."]
+metric = "60 / 60"
+label = "gate cases pass; policy denied 21 of 85 tool calls"
+caveat = "Local AWS emulator and a scripted model. Not deployed."
+stack = ["AgentCore", "Strands", "Cedar", "Terraform"]
+
+[[projects]]
+section = "AI engineering"
+repo = "ask-the-lake"
+what = ["Plain-English questions over an S3 lake via Athena,", "with row and column rules enforced outside the model."]
+metric = "0 rows leaked"
+label = "by 82 attack queries; 19 of 30 leak with no guard"
+caveat = "Athena emulated on DuckDB; scripted model. Not deployed."
+stack = ["Athena", "Lake Formation", "sqlglot", "MCP"]
+
+[[projects]]
+section = "AI engineering"
+repo = "connect-self-service-agent"
+what = ["A contact-centre agent built for Amazon Connect that", "checks identity in code and hands off with a summary."]
+metric = "37 / 37"
+label = "scripted contacts pass; no data before identity check"
+caveat = "Contact simulator and AWS emulator. Not run in Connect."
+stack = ["Amazon Connect", "Lambda", "Kinesis", "Athena"]
+
+[[projects]]
+section = "AI engineering"
 repo = "outbound-call-agent"
 what = ["An AI agent that makes follow-up calls for a lender,", "with consent and do-not-call rules enforced in code."]
 metric = "199 / 200"
